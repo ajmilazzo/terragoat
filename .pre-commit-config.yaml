@@ -1,13 +1,21 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
+# repos:
+# -   repo: https://github.com/mxab/pre-commit-trivy.git
+#     rev: v0.3.0
+#     hooks:
+#     -   id: trivyfs-docker
+#         args:
+#           - --skip-dirs
+#           - ./tests
+#           - --security-checks
+#           - config,vuln
+#           - . # last arg indicates the path/file to scan
+
 repos:
--   repo: https://github.com/mxab/pre-commit-trivy.git
-    rev: v0.3.0
+-   repo: https://github.com/aquasecurity/tfsec.git
+    rev: 3c1870a2a59e2e923ca441dfa3f3dc89ceea8ddf
     hooks:
-    -   id: trivyfs-docker
+    -   id: tfsec-docker
         args:
-          - --skip-dirs
-          - ./tests
-          - --security-checks
-          - config,vuln
-          - . # last arg indicates the path/file to scan
+          - .
