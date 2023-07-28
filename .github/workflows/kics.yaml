@@ -1,8 +1,7 @@
 name: kics
 on:
-  push:
-    branches:
-      - master
+  pull_request:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
